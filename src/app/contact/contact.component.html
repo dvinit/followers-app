@@ -1,0 +1,40 @@
+<form #f="ngForm">
+    <div class="form-group">
+        <label for="coursename">Enter new username</label>
+        <input required minlength="5" maxlength="25" ngModel name="coursename"  name="coursename" 
+        #coursename="ngModel" (change)="log(coursename)" id="username" type="text" class="form-control">
+        <div    *ngIf="coursename.touched && !coursename.valid" class="alert alert-danger">
+            Coursename is not valid
+        </div>
+    </div>
+ <!--   
+    <div class="form-group">
+        <label for="emailid">Enter your mail id</label>
+        <input  id="emailid" type="email" class="form-control">
+        <small id="emailHelp" class="form-text text-muted">We don't share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="comments">Your comments here</label>
+        <textarea ngModel name="comment" id="comments"  class="form-control"  rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      -->
+      <div class="form-group">
+        <label for="coursetype">Coursetype</label>
+       
+        <select ngModel name="coursetype" type="select" class="form-control" id="coursetype" placeholder="none">
+        <option value="select coursetype"></option>
+         <option *ngFor="let cr of coursetype" [value]="cr.type">{{cr.type}}</option> 
+       
+        </select>   
+      </div>
+      <div class="form-check">
+        <input ngModel name="checkcourse" type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Accept to our terms and conditions</label>
+      </div>
+    <button class="btn btn-primary" [disabled]="!f.valid" type="submit" >Save and register</button>
+    <div>{{f.value | json}}</div>
+</form>

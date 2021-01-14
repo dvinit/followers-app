@@ -1,21 +1,6 @@
-@import  '~bootstrap/dist/css/bootstrap.css';
 
 div{
   padding: 20px;  
   text-align: center;
 }
-.cntr{
-   position: absolute;
-   
-   display: flex;
-   align-items: center;
-}
 
-form{
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin: 25px;
-  
- 
-}
